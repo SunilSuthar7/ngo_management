@@ -8,6 +8,8 @@ const AddVolunteerParticipation = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+
     const validateForm = () => {
         const newErrors = {};
         if (!participation.VolunteerID) newErrors.VolunteerID = 'Volunteer ID is required';
@@ -89,6 +91,7 @@ const AddVolunteerParticipation = () => {
                             value={participation.Date_Joined}
                             onChange={e => setParticipation({ ...participation, Date_Joined: e.target.value })}
                             className={errors.Date_Joined ? 'input-error' : ''}
+                            max={today} // Restrict to today's date or earlier
                         />
                         {errors.Date_Joined && <span className="error-message">{errors.Date_Joined}</span>}
                     </div>

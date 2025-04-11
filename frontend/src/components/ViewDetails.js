@@ -47,14 +47,8 @@ const ViewDetails = () => {
                             <span role="img" aria-label="money bag">💰</span>
                         </div>
                         <h3>Donors</h3>
-                        <p>Meet the generous individuals and organizations whose financial support makes our work possible. Learn about their stories and the causes they champion.</p>
-                        <Link to="/donor-list" className="card-button">
-                            Browse Donors
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </Link>
+                        <p>Meet the generous individuals and organizations whose financial support makes our work possible.</p>
+                        <Link to="/donor-list" className="card-button">Browse Donors</Link>
                     </div>
                     
                     <div className="details-card animate-card">
@@ -62,14 +56,8 @@ const ViewDetails = () => {
                             <span role="img" aria-label="handshake">🤝</span>
                         </div>
                         <h3>Volunteers</h3>
-                        <p>Dedicated individuals making a real difference on the ground. Discover their motivations, skills, and the transformation they bring to communities.</p>
-                        <Link to="/volunteer-list" className="card-button">
-                            Meet Volunteers
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </Link>
+                        <p>Discover the dedicated individuals making a real difference on the ground.</p>
+                        <Link to="/volunteer-list" className="card-button">Meet Volunteers</Link>
                     </div>
                     
                     <div className="details-card animate-card">
@@ -77,14 +65,8 @@ const ViewDetails = () => {
                             <span role="img" aria-label="building construction">🏗️</span>
                         </div>
                         <h3>Projects</h3>
-                        <p>Transformative initiatives providing education, healthcare, and essential support. See the impact of each project and the communities they serve.</p>
-                        <Link to="/project-list" className="card-button">
-                            Explore Projects
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </Link>
+                        <p>See the impact of transformative initiatives providing education, healthcare, and essential support.</p>
+                        <Link to="/project-list" className="card-button">Explore Projects</Link>
                     </div>
                     
                     <div className="details-card animate-card">
@@ -92,14 +74,8 @@ const ViewDetails = () => {
                             <span role="img" aria-label="money with wings">💸</span>
                         </div>
                         <h3>Donations</h3>
-                        <p>Transparency in action. Track how donations are allocated and utilized to create meaningful change in the lives of those who need it most.</p>
-                        <Link to="/donation-list" className="card-button">
-                            View Donations
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </Link>
+                        <p>Track how donations are allocated and utilized to create meaningful change.</p>
+                        <Link to="/donation-list" className="card-button">View Donations</Link>
                     </div>
                     
                     <div className="details-card animate-card">
@@ -107,14 +83,8 @@ const ViewDetails = () => {
                             <span role="img" aria-label="bar chart">📊</span>
                         </div>
                         <h3>Volunteer Participation</h3>
-                        <p>Explore the diverse contributions of our volunteers across projects. Learn about their impact, hours contributed, and skills shared.</p>
-                        <Link to="/volunteer-participation-list" className="card-button">
-                            See Participation
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M5 12h14"></path>
-                                <path d="M12 5l7 7-7 7"></path>
-                            </svg>
-                        </Link>
+                        <p>Explore the diverse contributions of our volunteers across projects.</p>
+                        <Link to="/volunteer-participation-list" className="card-button">See Participation</Link>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ const projectRoutes = require('./routes/projectRoutes');
 const donationRoutes = require('./routes/donationRoutes');
 const volunteerParticipationRoutes = require('./routes/volunteerParticipationRoutes');
 const volunteerSkillRoutes = require('./routes/volunteerSkillRoutes'); 
+const dashboardRoutes = require('./routes/dashboardRoutes');
 
 const app = express();
 app.use(cors());
@@ -19,6 +20,7 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/donations', donationRoutes);
 app.use('/api/volunteer-participation', volunteerParticipationRoutes);
 app.use('/api/volunteer-skills', volunteerSkillRoutes);
+app.use('/api/dashboard', dashboardRoutes);
 
 // Default Route
 app.get('/', (req, res) => {

@@ -15,6 +15,8 @@ const AddDonation = () => {
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
 
+    const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+
     const validateForm = () => {
         const newErrors = {};
         if (!donation.DonorID) newErrors.DonorID = 'Donor ID is required';
@@ -100,6 +102,7 @@ const AddDonation = () => {
                             type="date"
                             value={donation.Donation_Date}
                             onChange={e => setDonation({ ...donation, Donation_Date: e.target.value })}
+                            max={today} // Restrict to today's date or earlier
                             className={errors.Donation_Date ? 'input-error' : ''}
                         />
                         {errors.Donation_Date && <span className="error-message">{errors.Donation_Date}</span>}

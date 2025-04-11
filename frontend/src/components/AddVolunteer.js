@@ -13,6 +13,8 @@ const AddVolunteer = () => {
     });
     const [skillInput, setSkillInput] = useState('');
 
+    const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -68,6 +70,7 @@ const AddVolunteer = () => {
                             type="date" required
                             value={volunteer.Date_Joined}
                             onChange={e => setVolunteer({ ...volunteer, Date_Joined: e.target.value })} 
+                            max={today} // Restrict to today's date or earlier
                         />
                     </div>
 

@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import API from '../services/api';
 import '../styles/register.css';
-import { FaUser, FaMapMarkerAlt, FaPhone, FaEnvelope,  FaRupeeSign } from 'react-icons/fa';
+import { FaUser, FaMapMarkerAlt, FaPhone, FaEnvelope, FaRupeeSign } from 'react-icons/fa';
 
 const AddDonor = () => {
-    const [donor, setDonor] = useState({ FName: '', LName: '', Address: '', Contact_Number: '', Email: '', Total_Donated_Amount: '' });
+    const [donor, setDonor] = useState({ FName: '', LName: '', Address: '', Contact_Number: '', Email: '', Total_Donated_Amount: '', Donation_Date: '' });
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
 
     const validateForm = () => {
         const newErrors = {};
@@ -19,6 +21,7 @@ const AddDonor = () => {
             newErrors.Email = 'Email is invalid';
         }
         if (!donor.Total_Donated_Amount) newErrors.Total_Donated_Amount = 'Total Donated Amount is required';
+        if (!donor.Donation_Date) newErrors.Donation_Date = 'Donation Date is required';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
@@ -31,7 +34,7 @@ const AddDonor = () => {
         try {
             await API.post('/donors/add', donor);
             alert('Donor added successfully!');
-            setDonor({ FName: '', LName: '', Address: '', Contact_Number: '', Email: '', Total_Donated_Amount: '' });
+            setDonor({ FName: '', LName: '', Address: '', Contact_Number: '', Email: '', Total_Donated_Amount: '', Donation_Date: '' });
             setErrors({});
         } catch (error) {
             console.error(error);
@@ -95,10 +98,7 @@ const AddDonor = () => {
                         {errors.Email && <span className="error-message">{errors.Email}</span>}
                     </div>
                     <div className="form-group">
-                    <label>
-    <FaRupeeSign className="rupee-icon" /> Total Donated Amount <span className="required">*</span>
-</label>
-
+                        <label><FaRupeeSign className="rupee-icon" /> Total Donated Amount <span className="required">*</span></label>
                         <input
                             type="number"
                             value={donor.Total_Donated_Amount}
@@ -106,6 +106,17 @@ const AddDonor = () => {
                             className={errors.Total_Donated_Amount ? 'input-error' : ''}
                         />
                         {errors.Total_Donated_Amount && <span className="error-message">{errors.Total_Donated_Amount}</span>}
+                    </div>
+                    <div className="form-group">
+                        <label>Donation Date <span className="required">*</span></label>
+                        <input
+                            type="date"
+                            value={donor.Donation_Date}
+                            onChange={e => setDonor({ ...donor, Donation_Date: e.target.value })}
+                            max={today} // Restrict to today's date or earlier
+                            className={errors.Donation_Date ? 'input-error' : ''}
+                        />
+                        {errors.Donation_Date && <span className="error-message">{errors.Donation_Date}</span>}
                     </div>
                     <button type="submit" className="submit-btn" disabled={isSubmitting}>
                         {isSubmitting ? 'Adding...' : 'Add Donor'}

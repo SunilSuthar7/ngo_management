@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/global.css";
+import Dashboard from './Dashboard';
 
 const Home = () => {
     // Add scroll animation effect
@@ -72,6 +73,9 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Dashboard Section */}
+            <Dashboard />
 
             {/* Get Involved Section */}
             <section id="options" className="options-section animate-on-scroll">

@@ -38,4 +38,5 @@ app.listen(PORT, () => {
     console.log(`📌 Donations API: http://localhost:${PORT}/api/donations`);
     console.log(`📌 Volunteer Participation API: http://localhost:${PORT}/api/volunteer-participation`);
     console.log(`📌 Volunteer Skills API: http://localhost:${PORT}/api/volunteer-skills/:volunteerID`);
+    console.log("Server is running and listening for requests...");
 });
